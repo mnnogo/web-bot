@@ -12,7 +12,7 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     var message = document.getElementById("inputText").value;
     addMessage("User", message, "text-primary");
 
-    connection.invoke("SendMessage", message).catch(function (err) {
+    connection.invoke("SendMessage", message, connection.connectionId).catch(function (err) {
         return console.error(err.toString());
     });
     document.getElementById("inputText").value = '';

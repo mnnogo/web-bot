@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text.Json;
+using System.Text.RegularExpressions;
 using webapp.RabbitMQ;
 
 namespace webapp.Models
@@ -17,11 +18,13 @@ namespace webapp.Models
             return Task.CompletedTask;
         }
 
-        private void HandleMessage(string message)
+        private void HandleMessage(string receivedMessage)
         {
-            message = NormalizeMessage(message);
+            var clientMessage = JsonSerializer.Deserialize<ClientMessage>(receivedMessage);
 
-            SendMessageToNextHandler(message);
+            clientMessage.Message = NormalizeMessage(clientMessage.Message);
+
+            SendMessageToNextHandler(clientMessage);
         }
 
         private static string NormalizeMessage(string message)
@@ -31,9 +34,10 @@ namespace webapp.Models
             return Regex.Replace(newMessage, @"[!?.,]", "");
         }
         
-        private void SendMessageToNextHandler(string message)
+        private void SendMessageToNextHandler(ClientMessage message)
         {
-            Queue.SendMessage(QUEUE_TO, message);
+            string jsonMessage = JsonSerializer.Serialize(message);
+            Queue.SendMessage(QUEUE_TO, jsonMessage);
         }
     }
 }

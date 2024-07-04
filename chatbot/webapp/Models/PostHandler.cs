@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using webapp.RabbitMQ;
 using NLog;
+using System.Text.Json;
 
 namespace webapp.Models
 {
@@ -24,11 +25,11 @@ namespace webapp.Models
             return Task.CompletedTask;
         }
 
-        private void HandleMessage(string message)
+        private void HandleMessage(string receivedMessage)
         {
-            List<string> messagesList = NormalizeLength(message, 200);
+            var clientMessage = JsonSerializer.Deserialize<ClientMessage>(receivedMessage);
 
-            SendMessageToClient(messagesList);
+            SendMessageToClient(clientMessage);
         }
 
         private List<string> NormalizeLength(string message, int maxLength)
@@ -50,12 +51,14 @@ namespace webapp.Models
             return messagesList;
         }
 
-        private void SendMessageToClient(List<string> messagesList)
+        private void SendMessageToClient(ClientMessage receivedMessage)
         {
+            var messagesList = NormalizeLength(receivedMessage.Message, 200);
+
             foreach (var message in messagesList)
             {
-                _hubContext.Clients.All.SendAsync("ReceiveMessage", message);
-                _logger.Info($"Message '{message}' was sent to client");
+                _hubContext.Clients.Client(receivedMessage.ClientId).SendAsync("ReceiveMessage", message);
+                _logger.Info($"Message '{message}' was sent to client '{receivedMessage.ClientId}'");
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using webapp.Json;
+﻿using System.Text.Json;
+using webapp.Json;
 using webapp.RabbitMQ;
 
 namespace webapp.Models
@@ -17,25 +18,28 @@ namespace webapp.Models
             return Task.CompletedTask;
         }
 
-        private void HandleMessage(string message)
+        private void HandleMessage(string receivedMessage)
         {
-            string answer = GetAnswer(message);
+            var clientMessage = JsonSerializer.Deserialize<ClientMessage>(receivedMessage);
 
-            SendMessageToNextHandler(answer);
+            clientMessage.Message = GetAnswer(clientMessage.Message);
+
+            SendMessageToNextHandler(clientMessage);
         }
 
         private string GetAnswer(string message)
         {
             string? answer = JsonHandler.GetAnswer(message);
 
-            answer ??= "неизвестный вопрос";
+            answer ??= "Неизвестный вопрос";
 
             return answer;
         }
 
-        private void SendMessageToNextHandler(string message)
+        private void SendMessageToNextHandler(ClientMessage message)
         {
-            Queue.SendMessage(QUEUE_TO, message);
+            string jsonMessage = JsonSerializer.Serialize(message);
+            Queue.SendMessage(QUEUE_TO, jsonMessage);
         }
     }
 }
