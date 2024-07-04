@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|c:\\users\\sergey\\desktop\\healthmonitor\\healthmonitor\\rabbitmq\\queue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\rabbitmq\\queue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|c:\\users\\sergey\\desktop\\healthmonitor\\healthmonitor\\models\\healthmonitortask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\models\\healthmonitortask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|c:\\users\\sergey\\desktop\\healthmonitor\\healthmonitor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|c:\\users\\sergey\\desktop\\healthmonitor\\healthmonitor\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "HealthMonitor\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\Properties\\launchSettings.json",
+              "RelativeToolTip": "HealthMonitor\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-04T04:57:07.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Queue.cs",
+              "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\RabbitMQ\\Queue.cs",
+              "RelativeDocumentMoniker": "HealthMonitor\\RabbitMQ\\Queue.cs",
+              "ToolTip": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\RabbitMQ\\Queue.cs",
+              "RelativeToolTip": "HealthMonitor\\RabbitMQ\\Queue.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAgwDoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T11:09:57.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HealthMonitorTask.cs",
+              "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\Models\\HealthMonitorTask.cs",
+              "RelativeDocumentMoniker": "HealthMonitor\\Models\\HealthMonitorTask.cs",
+              "ToolTip": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\Models\\HealthMonitorTask.cs",
+              "RelativeToolTip": "HealthMonitor\\Models\\HealthMonitorTask.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAwAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T11:09:19.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\Program.cs",
+              "RelativeDocumentMoniker": "HealthMonitor\\Program.cs",
+              "ToolTip": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\Program.cs",
+              "RelativeToolTip": "HealthMonitor\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T11:05:58.043Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
