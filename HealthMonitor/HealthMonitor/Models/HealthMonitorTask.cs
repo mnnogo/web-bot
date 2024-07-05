@@ -1,4 +1,6 @@
-﻿using HealthMonitor.RabbitMQ;
+﻿using HealthMonitor.Hubs;
+using HealthMonitor.RabbitMQ;
+using Microsoft.AspNetCore.SignalR;
 using NLog;
 
 namespace HealthMonitor.Models
@@ -9,20 +11,32 @@ namespace HealthMonitor.Models
         private const string TEST_MESSAGE = "test message";
 
         private static readonly NLog.ILogger _logger = LogManager.GetCurrentClassLogger();
+        private IHubContext<MessageHub> _hubContext;
+
+        public HealthMonitorTask(IHubContext<MessageHub> hubContext)
+        {
+            _hubContext = hubContext;
+        }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            try
             {
-                foreach (var queue in queues)
+                while (!stoppingToken.IsCancellationRequested)
                 {
-                    Queue.SendMessage(queue, TEST_MESSAGE, "HealthCheckTag");
-                    //var receivedMessage = Queue.ReceiveMessage(queue, "HealthCheckTag");
-                    Queue.StartListening(queue, (message) => HandleMessage(queue, message));
-                }
+                    foreach (var queue in queues)
+                    {
+                        Queue.SendMessage(queue, TEST_MESSAGE, "HealthCheckTag");
+                        Queue.StartListening(queue, (message) => HandleMessage(queue, message));
+                    }
 
-                Thread.Sleep(60 * 1000);
+                    Thread.Sleep(30 * 1000);
+                }
             }
+            catch (Exception e)
+            {
+               _logger.Error(e.ToString());
+            }            
 
             return Task.CompletedTask;
         }
@@ -32,18 +46,18 @@ namespace HealthMonitor.Models
             if (receivedMessage != TEST_MESSAGE)
             {
                 _logger.Error("Queue {queue} is NOT working correctly", queue);
-                //SendServerError();
-                //throw new Exception();
+                
             }
             else
             {
+                SendServerError();
                 _logger.Info("Queue {queue} is working correctly", queue);
             }
         }
 
         private void SendServerError()
         {
-            throw new NotImplementedException();
+            _hubContext.Clients.All.SendAsync("ThrowServerError", "RabbitMQ servers are not working.");
         }
     }
 }

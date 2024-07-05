@@ -4,6 +4,11 @@ connection.on("ReceiveMessage", function (message) {
     addMessage("Bot", message, "text-success");
 });
 
+connection.on("ThrowServerError", function (message) {
+    alert("smh");
+    throw new Error(message);
+});
+
 connection.start().catch(function (err) {
     return console.error(err.toString());
 });

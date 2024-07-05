@@ -662,11 +662,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\HealthMonitor.csproj",
+      "projectUniqueName": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\HealthMonitor.csproj",
       "projectName": "HealthMonitor",
-      "projectPath": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\HealthMonitor.csproj",
+      "projectPath": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\HealthMonitor.csproj",
       "packagesPath": "C:\\Users\\Sergey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sergey\\Desktop\\HealthMonitor\\HealthMonitor\\obj\\",
+      "outputPath": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

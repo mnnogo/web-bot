@@ -2,6 +2,7 @@
 using webapp.RabbitMQ;
 using NLog;
 using System.Text.Json;
+using webapp.Hubs;
 
 namespace webapp.Models
 {

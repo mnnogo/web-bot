@@ -3,7 +3,7 @@ using webapp.RabbitMQ;
 using NLog;
 using System.Text.Json;
 
-namespace webapp.Models
+namespace webapp.Hubs
 {
     public class MessageHub : Hub
     {

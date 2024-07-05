@@ -1,5 +1,6 @@
 using NLog;
 using NLog.Web;
+using webapp.Hubs;
 using webapp.Models;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();

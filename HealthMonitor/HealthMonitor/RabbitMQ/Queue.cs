@@ -70,7 +70,7 @@ namespace HealthMonitor.RabbitMQ
             };
 
             _channel.BasicConsume(queue: queueName,
-                                 autoAck: true,
+                                 autoAck: false,
                                  consumer: consumer);
         }
 

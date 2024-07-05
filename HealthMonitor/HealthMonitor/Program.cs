@@ -1,3 +1,4 @@
+using HealthMonitor.Hubs;
 using HealthMonitor.Models;
 using NLog;
 using NLog.Web;
@@ -37,6 +38,8 @@ try
     app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    app.MapHub<MessageHub>("/messageHub");
 
     app.Run();
 }
