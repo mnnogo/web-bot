@@ -9,6 +9,7 @@ namespace HealthMonitor.Models
     {
         private readonly List<string> queues = ["pre-queue", "queue", "post-queue"];
         private const string TEST_MESSAGE = "test message";
+        private const string FLAG_PATH = "../../chatbot/webapp/stop.flag";
 
         private static readonly NLog.ILogger _logger = LogManager.GetCurrentClassLogger();
         private IHubContext<MessageHub> _hubContext;
@@ -20,44 +21,49 @@ namespace HealthMonitor.Models
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            try
+            while (!stoppingToken.IsCancellationRequested)
             {
-                while (!stoppingToken.IsCancellationRequested)
+                try
                 {
                     foreach (var queue in queues)
                     {
                         Queue.SendMessage(queue, TEST_MESSAGE, "HealthCheckTag");
                         Queue.StartListening(queue, (message) => HandleMessage(queue, message));
                     }
-
-                    Thread.Sleep(30 * 1000);
                 }
+                catch (Exception e)
+                {
+                    _logger.Error(e.ToString());
+
+                    File.Create(FLAG_PATH).Dispose();
+                }
+
+                Thread.Sleep(30 * 1000);
             }
-            catch (Exception e)
-            {
-               _logger.Error(e.ToString());
-            }            
 
             return Task.CompletedTask;
         }
 
         private void HandleMessage(string queue, string? receivedMessage)
         {
-            if (receivedMessage != TEST_MESSAGE)
+            if (receivedMessage == TEST_MESSAGE)
             {
-                _logger.Error("Queue {queue} is NOT working correctly", queue);
-                
+                DeleteFlagFileIfExists(FLAG_PATH);
+
+                _logger.Info("Queue {queue} is working correctly", queue);
             }
             else
             {
-                SendServerError();
-                _logger.Info("Queue {queue} is working correctly", queue);
+                _logger.Error("Queue {queue} is NOT working correctly", queue);
             }
         }
 
-        private void SendServerError()
+        private static void DeleteFlagFileIfExists(string filepath)
         {
-            _hubContext.Clients.All.SendAsync("ThrowServerError", "RabbitMQ servers are not working.");
+            if (File.Exists(filepath))
+            {
+                File.Delete(filepath);
+            }
         }
     }
 }

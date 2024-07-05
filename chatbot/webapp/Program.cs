@@ -15,6 +15,7 @@ try
     builder.Services.AddHostedService<PreHandler>();
     builder.Services.AddHostedService<Handler>();
     builder.Services.AddHostedService<PostHandler>();
+    builder.Services.AddHostedService<StopFlagChecker>();
 
     // NLog: Setup NLog for Dependency injection
     builder.Logging.ClearProviders();
