@@ -26,7 +26,7 @@ namespace webapp.Models
                         File.Exists("stop.flag")
                         );
 
-                    Thread.Sleep(1000);
+                    Thread.Sleep(30 * 1000);
                 }
             });
         }
