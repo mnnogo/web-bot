@@ -46,8 +46,7 @@
               "RelativeToolTip": "HealthMonitor\\wwwroot\\js\\site.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-07-04T11:13:17.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T11:13:17.918Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "HealthMonitor\\Properties\\launchSettings.json",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-04T10:50:11.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T10:50:11.654Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "HealthMonitor\\Hubs\\MessageHub.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T10:12:24.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T10:12:24.387Z"
             },
             {
               "$type": "Document",
@@ -85,8 +82,7 @@
               "RelativeToolTip": "HealthMonitor\\RabbitMQ\\Queue.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAIwBUAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T11:09:57.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T11:09:57.588Z"
             },
             {
               "$type": "Document",
@@ -96,7 +92,7 @@
               "RelativeDocumentMoniker": "HealthMonitor\\Models\\HealthMonitorTask.cs",
               "ToolTip": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\Models\\HealthMonitorTask.cs",
               "RelativeToolTip": "HealthMonitor\\Models\\HealthMonitorTask.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAUwB0AAAAtAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAcwEAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-03T11:09:19.466Z",
               "EditorCaption": ""
@@ -111,8 +107,7 @@
               "RelativeToolTip": "HealthMonitor\\Program.cs",
               "ViewState": "AQIAACYAAAAAAAAAAAAIwCsAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-03T11:05:58.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-03T11:05:58.043Z"
             }
           ]
         }

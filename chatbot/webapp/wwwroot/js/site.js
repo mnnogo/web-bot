@@ -4,9 +4,15 @@ connection.on("ReceiveMessage", function (message) {
     addMessage("Bot", message, "text-success");
 });
 
-connection.on("ThrowServerError", function (message) {
-    alert("smh");
-    throw new Error(message);
+// toError = true - switch to error screen
+// toError = false - switch to home screen
+connection.on("SwitchErrorScreens", function (toError) {
+    if (toError) {
+        window.location.href = "/Home/Error";
+    }
+    else if (window.location.href !== 'https://localhost:7254/') {
+        window.location.href = "/";
+    }
 });
 
 connection.start().catch(function (err) {

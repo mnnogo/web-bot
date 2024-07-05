@@ -21,20 +21,20 @@ namespace webapp.Models
             {
                 while (!stoppingToken.IsCancellationRequested)
                 {
-                    if (File.Exists("stop.flag"))
-                    {
-                        SendServerError();
-                    }
+                    // switch screen to error if file exists
+                    ManageErrorsScreens(
+                        File.Exists("stop.flag")
+                        );
 
-                    Thread.Sleep(30 * 1000);
+                    Thread.Sleep(1000);
                 }
             });
         }
 
-        private void SendServerError()
+        private void ManageErrorsScreens(bool switchToError)
         {
-            _logger.Error("Stop flag file was detected. Start health monitor or delete the file.");
-            _hubContext.Clients.All.SendAsync("ThrowServerError", "RabbitMQ servers are not working.");
+            //_logger.Error("Stop flag file was detected. Start health monitor or delete the file.");
+            _hubContext.Clients.All.SendAsync("SwitchErrorScreens", switchToError);
         }
     }
 }
