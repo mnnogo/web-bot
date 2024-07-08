@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|c:\\users\\sergey\\desktop\\webchatbot\\healthmonitor\\healthmonitor\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|c:\\users\\sergey\\desktop\\webchatbot\\healthmonitor\\healthmonitor\\models\\healthmonitortask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\models\\healthmonitortask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,10 +23,6 @@
       "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|c:\\users\\sergey\\desktop\\webchatbot\\healthmonitor\\healthmonitor\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|c:\\users\\sergey\\desktop\\webchatbot\\healthmonitor\\healthmonitor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{68680488-B2A1-47BA-A527-96E283533851}|HealthMonitor\\HealthMonitor.csproj|solutionrelative:healthmonitor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "nlog.config",
               "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\nlog.config",
               "RelativeDocumentMoniker": "HealthMonitor\\nlog.config",
@@ -51,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "HealthMonitor\\wwwroot\\js\\site.js",
@@ -64,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "HealthMonitor\\Properties\\launchSettings.json",
@@ -77,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Queue.cs",
               "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\RabbitMQ\\Queue.cs",
               "RelativeDocumentMoniker": "HealthMonitor\\RabbitMQ\\Queue.cs",
@@ -90,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HealthMonitorTask.cs",
               "DocumentMoniker": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\Models\\HealthMonitorTask.cs",
               "RelativeDocumentMoniker": "HealthMonitor\\Models\\HealthMonitorTask.cs",
-              "ToolTip": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\Models\\HealthMonitorTask.cs*",
-              "RelativeToolTip": "HealthMonitor\\Models\\HealthMonitorTask.cs*",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBgAAAAxAAAA",
+              "ToolTip": "C:\\Users\\Sergey\\Desktop\\webchatbot\\HealthMonitor\\HealthMonitor\\Models\\HealthMonitorTask.cs",
+              "RelativeToolTip": "HealthMonitor\\Models\\HealthMonitorTask.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-03T11:09:19.466Z",
               "EditorCaption": ""

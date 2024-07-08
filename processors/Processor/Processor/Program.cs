@@ -1,24 +1,24 @@
 ﻿using System.Text.Json;
+using webapp;
 using webapp.Json;
 using webapp.RabbitMQ;
 
-namespace webapp.Models
+namespace Processor
 {
-    public class Handler : BackgroundService
+    internal class Program
     {
-        private const string QUEUE_FROM = "queue";
-        private const string QUEUE_TO = "post-queue";
+        private static readonly string QUEUE_FROM = "queue";
+        private static readonly string QUEUE_TO = "post-queue";
 
-        protected override Task ExecuteAsync(CancellationToken stoppingToken)
+        static void Main(string[] args)
         {
-            stoppingToken.ThrowIfCancellationRequested();
-
             Queue.StartListening(QUEUE_FROM, HandleMessage);
 
-            return Task.CompletedTask;
+            Console.WriteLine("Processor is listening...");
+            Console.ReadLine();
         }
 
-        private void HandleMessage(string receivedMessage)
+        private static void HandleMessage(string receivedMessage)
         {
             var clientMessage = JsonSerializer.Deserialize<ClientMessage>(receivedMessage);
 
@@ -27,7 +27,7 @@ namespace webapp.Models
             SendMessageToNextHandler(clientMessage);
         }
 
-        private string GetAnswer(string message)
+        private static string GetAnswer(string message)
         {
             string? answer = JsonHandler.GetAnswer(message);
 
@@ -36,7 +36,7 @@ namespace webapp.Models
             return answer;
         }
 
-        private void SendMessageToNextHandler(ClientMessage message)
+        private static void SendMessageToNextHandler(ClientMessage message)
         {
             string jsonMessage = JsonSerializer.Serialize(message);
             Queue.SendMessage(QUEUE_TO, jsonMessage);

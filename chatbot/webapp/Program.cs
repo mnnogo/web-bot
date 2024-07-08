@@ -12,10 +12,8 @@ try
     // Add services to the container.
     builder.Services.AddControllersWithViews();
     builder.Services.AddSignalR();
-    builder.Services.AddHostedService<PreHandler>();
-    builder.Services.AddHostedService<Handler>();
-    builder.Services.AddHostedService<PostHandler>();
     builder.Services.AddHostedService<StopFlagChecker>();
+    builder.Services.AddHostedService<ResponseListener>();
 
     // NLog: Setup NLog for Dependency injection
     builder.Logging.ClearProviders();
@@ -44,7 +42,10 @@ try
 
     app.MapHub<MessageHub>("/messageHub");
 
+    Console.WriteLine("Web application is running...");
+
     app.Run();
+
 }
 catch (Exception exception)
 {

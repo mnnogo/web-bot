@@ -5,7 +5,7 @@ namespace webapp.Json
 {
     public class JsonHandler
     {
-        private static readonly NLog.ILogger _logger = LogManager.GetCurrentClassLogger();
+        private static readonly ILogger _logger = LogManager.GetCurrentClassLogger();
                
         // возвращает null если не удалось получить ответ
         public static string? GetAnswer(string message)
@@ -18,7 +18,7 @@ namespace webapp.Json
 
             if (items == null || !items.TryGetValue(message, out answer))
             {
-                _logger.Debug("Trying to get value from JSON. items = '{items}', answer = '{answer}'",
+                _logger.Warn("Trying to get value from JSON. items = {items}, answer = {answer}",
                               items, answer);
             }
              
