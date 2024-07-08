@@ -37,7 +37,7 @@ namespace HealthMonitor.RabbitMQ
                                  basicProperties: properties,
                                  body: body);
 
-            _logger.Debug($"Message '{message}' sent to '{queueName}'");
+            _logger.Debug("Message {message} sent to {queueName}", message, queueName);
         }
 
         public static void StartListening(string queueName, Action<string> onMessageReceived)
@@ -64,7 +64,7 @@ namespace HealthMonitor.RabbitMQ
                 }
 
 
-                _logger.Debug($"Message '{message}' was consumed from '{queueName}'");
+                _logger.Debug("Message {message} was consumed from {queueName}", message, queueName);
 
                 onMessageReceived(message);
             };

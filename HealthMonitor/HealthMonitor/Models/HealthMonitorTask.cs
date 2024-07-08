@@ -1,6 +1,4 @@
-﻿using HealthMonitor.Hubs;
-using HealthMonitor.RabbitMQ;
-using Microsoft.AspNetCore.SignalR;
+﻿using HealthMonitor.RabbitMQ;
 using NLog;
 
 namespace HealthMonitor.Models
@@ -12,12 +10,6 @@ namespace HealthMonitor.Models
         private const string FLAG_PATH = "../../chatbot/webapp/stop.flag";
 
         private static readonly NLog.ILogger _logger = LogManager.GetCurrentClassLogger();
-        private IHubContext<MessageHub> _hubContext;
-
-        public HealthMonitorTask(IHubContext<MessageHub> hubContext)
-        {
-            _hubContext = hubContext;
-        }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {

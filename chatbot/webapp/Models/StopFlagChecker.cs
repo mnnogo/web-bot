@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.SignalR;
 using NLog;
 using webapp.Hubs;
 
@@ -33,7 +32,11 @@ namespace webapp.Models
 
         private void ManageErrorsScreens(bool switchToError)
         {
-            //_logger.Error("Stop flag file was detected. Start health monitor or delete the file.");
+            if (switchToError)
+            {
+                _logger.Error("Stop flag file was detected. Start health monitor or delete the file.");
+            }
+
             _hubContext.Clients.All.SendAsync("SwitchErrorScreens", switchToError);
         }
     }
