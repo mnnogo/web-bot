@@ -59,7 +59,7 @@ namespace webapp.RabbitMQ
                     return;
                 }
 
-                _logger.Debug($"Message '{message}' was consumed from '{queueName}'");
+                _logger.Debug("Message {message} was consumed from {queueName}", message, queueName);
 
                 _channel.BasicAck(ea.DeliveryTag, true);
 

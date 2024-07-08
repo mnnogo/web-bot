@@ -59,7 +59,8 @@ namespace webapp.Models
             foreach (var message in messagesList)
             {
                 _hubContext.Clients.Client(receivedMessage.ClientId).SendAsync("ReceiveMessage", message);
-                _logger.Info($"Message '{message}' was sent to client '{receivedMessage.ClientId}'");
+                _logger.Info("Message {message} was sent to client {clientId}", 
+                    message, receivedMessage.ClientId);
             }
         }
     }

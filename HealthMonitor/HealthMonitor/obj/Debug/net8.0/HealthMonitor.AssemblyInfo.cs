@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthMonitor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42f3f5c0cdd505802bcea9cd547b072346f0f559")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95d69aedc8f15b2bfc4a4dd43eb6746ff74aff61")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthMonitor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthMonitor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

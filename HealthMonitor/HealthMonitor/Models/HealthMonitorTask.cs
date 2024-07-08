@@ -13,6 +13,11 @@ namespace HealthMonitor.Models
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            foreach (var queue in queues)
+            {
+                Queue.StartListening(queue, (message) => HandleMessage(queue, message));
+            }
+
             while (!stoppingToken.IsCancellationRequested)
             {
                 try
@@ -20,7 +25,6 @@ namespace HealthMonitor.Models
                     foreach (var queue in queues)
                     {
                         Queue.SendMessage(queue, TEST_MESSAGE, "HealthCheckTag");
-                        Queue.StartListening(queue, (message) => HandleMessage(queue, message));
                     }
                 }
                 catch (Exception e)
