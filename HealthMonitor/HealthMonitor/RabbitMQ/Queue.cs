@@ -63,7 +63,7 @@ namespace HealthMonitor.RabbitMQ
                     return;
                 }
 
-
+                _channel.BasicAck(ea.DeliveryTag, false);
                 _logger.Debug("Message {message} was consumed from {queueName}", message, queueName);
 
                 onMessageReceived(message);
