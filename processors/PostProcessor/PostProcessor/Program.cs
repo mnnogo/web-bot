@@ -38,6 +38,8 @@ namespace PostProcessor
                     new ClientMessage(receivedMessage.ClientId, message));
 
                 Queue.SendMessage(QUEUE_TO, messagePieceJson);
+
+                Thread.Sleep(1);
             }
         }
 

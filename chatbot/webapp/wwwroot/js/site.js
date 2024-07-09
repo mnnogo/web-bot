@@ -42,6 +42,13 @@ function addMessage(sender, message, textColor) {
     msg.classList.add("bg-light", "p-2", "rounded", "flex-grow-1");
     msg.textContent = message;
 
+    var options = { hour: '2-digit', minute: '2-digit' };
+    var time = new Date().toLocaleTimeString([], options);
+    var timeSpan = document.createElement("span");
+    timeSpan.classList.add("badge", "badge-pill", "text-muted", "ml-2");
+    timeSpan.textContent = time;
+
+    div.appendChild(timeSpan);
     div.appendChild(badge);
     div.appendChild(msg);
     document.getElementById("messagesList").appendChild(div);

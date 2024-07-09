@@ -2,21 +2,23 @@
     ViewData["Title"] = "Chat Bot";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Chat Bot</h1>
-    <div class="form-group">
-        <label for="inputText">Enter text:</label>
-        <input type="text" class="form-control" id="inputText" name="inputText">
-        <input type="button" class="btn btn-primary mt-2" id="sendButton" value="Send Message" />
-    </div>
-</div>
-
 <div class="row p-3">
     <div class="col-12">
         <div class="card">
             <div class="card-header">Messages</div>
             <div class="card-body" id="messagesList" style="max-height: 300px; overflow-y: auto;">
                 <!-- Messages will appear here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" id="inputText" name="inputText">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="sendButton">Send</button>
             </div>
         </div>
     </div>
