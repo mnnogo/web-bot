@@ -9,7 +9,8 @@ namespace PostProcessor
     {
         private static readonly string QUEUE_FROM = "post-queue";
         private static readonly string QUEUE_TO = "sending-queue";
-        private static readonly ILogger _logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger _logger = LogManager.Setup()
+            .LoadConfigurationFromFile("..\\..\\..\\nlog.config").GetCurrentClassLogger();
 
         static void Main(string[] args)
         {

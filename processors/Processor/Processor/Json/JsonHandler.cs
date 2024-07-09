@@ -5,8 +5,9 @@ namespace webapp.Json
 {
     public class JsonHandler
     {
-        private static readonly ILogger _logger = LogManager.GetCurrentClassLogger();
-               
+        private static readonly Logger _logger = LogManager.Setup()
+            .LoadConfigurationFromFile("..\\..\\..\\nlog.config").GetCurrentClassLogger();
+
         // возвращает null если не удалось получить ответ
         public static string? GetAnswer(string message)
         {
@@ -16,12 +17,16 @@ namespace webapp.Json
 
             var items = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
 
-            if (items == null || !items.TryGetValue(message, out answer))
+            if (items?.TryGetValue(message, out answer) == false)
             {
-                _logger.Warn("Trying to get value from JSON. items = {items}, answer = {answer}",
-                              items, answer);
+                _logger.Debug("No response in JSON. answer = {answer}", answer);
             }
-             
+            else
+            {
+                _logger.Debug("Successfully got response from JSON.");
+            }
+
+
             return answer;
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using NLog;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using webapp;
 using webapp.RabbitMQ;
@@ -8,12 +9,15 @@ internal class Program
     private static readonly string QUEUE_FROM = "pre-queue";
     private static readonly string QUEUE_TO = "queue";
 
+    private static readonly ILogger _logger = LogManager.Setup()
+        .LoadConfigurationFromFile("..\\..\\..\\nlog.config").GetCurrentClassLogger();
+
     private static void Main(string[] args)
-    { 
+    {
         Queue.StartListening(QUEUE_FROM, HandleMessage);
 
         Console.WriteLine("PreProcessor is listening...");
-        Console.ReadLine();  
+        Console.ReadLine();
     }
 
     private static void HandleMessage(string receivedMessage)

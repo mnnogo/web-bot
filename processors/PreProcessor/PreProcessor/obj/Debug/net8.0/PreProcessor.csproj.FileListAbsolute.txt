@@ -9,8 +9,6 @@ C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\bin\Debu
 C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\bin\Debug\net8.0\PreProcessor.dll
 C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\bin\Debug\net8.0\PreProcessor.pdb
 C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\bin\Debug\net8.0\NLog.dll
-C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\bin\Debug\net8.0\NLog.Extensions.Logging.dll
-C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\bin\Debug\net8.0\NLog.Web.AspNetCore.dll
 C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\bin\Debug\net8.0\RabbitMQ.Client.dll
 C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\obj\Debug\net8.0\PreProcessor.csproj.AssemblyReference.cache
 C:\Users\Sergey\Desktop\webchatbot\processors\PreProcessor\PreProcessor\obj\Debug\net8.0\PreProce.B6F6729A.Up2Date

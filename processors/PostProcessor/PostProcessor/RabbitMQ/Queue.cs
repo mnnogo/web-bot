@@ -10,7 +10,8 @@ namespace webapp.RabbitMQ
         private static readonly ConnectionFactory _factory;
         private static readonly IConnection _connection;
         private static readonly IModel _channel;
-        private static readonly ILogger _logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger _logger = LogManager.Setup()
+            .LoadConfigurationFromFile("..\\..\\..\\nlog.config").GetCurrentClassLogger();
 
         static Queue()
         {
