@@ -34,7 +34,7 @@ namespace webapp.RabbitMQ
                                  basicProperties: null,
                                  body: body);
 
-            _logger.Debug("Message '{message}' sent to '{queueName}'");
+            _logger.Debug("Message sent to {queueName}", queueName);
         }
 
         public static void StartListening(string queueName, Action<string> onMessageReceived)
@@ -59,7 +59,7 @@ namespace webapp.RabbitMQ
                     return;
                 }
 
-                _logger.Debug("Message {message} was consumed from {queueName}", message, queueName);
+                _logger.Debug("Message was consumed from {queueName}", queueName);
 
                 _channel.BasicAck(ea.DeliveryTag, true);
 

@@ -12,8 +12,8 @@ namespace webapp.Hubs
 
         public Task SendMessage(string message, string connectionId)
         {
-            _logger.Info("Message {message} was received from client with connectionId {connectionId}",
-                        message, connectionId);
+            _logger.Info("Message was received from client with connectionId {connectionId}",
+                        connectionId);
 
             string jsonMessage = JsonSerializer.Serialize(
                 new ClientMessage(connectionId, message)

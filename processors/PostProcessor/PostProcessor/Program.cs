@@ -26,25 +26,6 @@ namespace PostProcessor
             SendMessageToSendingQueue(clientMessage);
         }
 
-        private static List<string> NormalizeLength(string message, int maxLength)
-        {
-            string _message = message;
-            List<string> messagesList = [];
-
-            while (_message.Length > 200)
-            {
-                int separationIndex = _message[..200].LastIndexOf(' ');
-
-                messagesList.Add(_message[..separationIndex]);
-
-                _message = _message[separationIndex..];
-            }
-
-            messagesList.Add(_message);
-
-            return messagesList;
-        }
-
         private static void SendMessageToSendingQueue(ClientMessage receivedMessage)
         {
             var messagesList = NormalizeLength(receivedMessage.Message, 200);
@@ -56,10 +37,26 @@ namespace PostProcessor
                     new ClientMessage(receivedMessage.ClientId, message));
 
                 Queue.SendMessage(QUEUE_TO, messagePieceJson);
-
-                _logger.Info("Message {message} was sent to client {clientId}", // TODO message
-                    message, receivedMessage.ClientId);
             }
+        }
+
+        private static List<string> NormalizeLength(string message, int maxLength)
+        {
+            string _message = message;
+            List<string> messagesList = [];
+
+            while (_message.Length > maxLength)
+            {
+                int separationIndex = _message[..maxLength].LastIndexOf(' ');
+
+                messagesList.Add(_message[..separationIndex]);
+
+                _message = _message[separationIndex..];
+            }
+
+            messagesList.Add(_message);
+
+            return messagesList;
         }
     }
 }

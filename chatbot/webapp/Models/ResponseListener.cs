@@ -34,7 +34,7 @@ namespace webapp.Models
         private void SendMessageToClient(ClientMessage message)
         {
             _hubContext.Clients.Client(message.ClientId).SendAsync("ReceiveMessage", message.Message);
-            //_logger.Info($"Message '{message}' was sent to client '{receivedMessage.ClientId}'"); // TODO
+            _logger.Info("Message was sent to client {clientId}", message.ClientId);
         }
     }
 }

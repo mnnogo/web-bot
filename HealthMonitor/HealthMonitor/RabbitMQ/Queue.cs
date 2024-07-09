@@ -37,7 +37,7 @@ namespace HealthMonitor.RabbitMQ
                                  basicProperties: properties,
                                  body: body);
 
-            _logger.Debug("Message {message} sent to {queueName}", message, queueName);
+            _logger.Debug("Message sent to {queueName}", queueName);
         }
 
         public static void StartListening(string queueName, Action<string> onMessageReceived)
@@ -64,7 +64,7 @@ namespace HealthMonitor.RabbitMQ
                 }
 
                 _channel.BasicAck(ea.DeliveryTag, false);
-                _logger.Debug("Message {message} was consumed from {queueName}", message, queueName);
+                _logger.Debug("Message was consumed from {queueName}", queueName);
 
                 onMessageReceived(message);
             };
@@ -72,25 +72,6 @@ namespace HealthMonitor.RabbitMQ
             _channel.BasicConsume(queue: queueName,
                                  autoAck: false,
                                  consumer: consumer);
-        }
-
-        public static string? ReceiveMessage(string queueName, string expectedTag)
-        {
-            var result = _channel.BasicGet(queue: queueName, autoAck: false);
-            if (result != null)
-            {              
-                var message = Encoding.UTF8.GetString(result.Body.ToArray());
-
-                // является ли сообщение тест-сообщением с тегом
-                if (result.BasicProperties.Headers != null &&
-                    result.BasicProperties.Headers.TryGetValue("MonitorTag", out object? value) &&
-                    Encoding.UTF8.GetString((byte[])value) == expectedTag)
-                {
-                    _channel.BasicAck(result.DeliveryTag, false);
-                    return message;
-                }
-            }
-            return null;
         }
 
         public static void Dispose()
