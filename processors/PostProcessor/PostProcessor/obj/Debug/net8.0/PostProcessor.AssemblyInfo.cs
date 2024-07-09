@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PostProcessor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+700a1fcc24ba3655a7de69973820f0e5a77dace4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e9f4697c672b50e18e1193e8f6421b25b63ac32")]
 [assembly: System.Reflection.AssemblyProductAttribute("PostProcessor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PostProcessor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
